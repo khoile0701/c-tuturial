@@ -1,4 +1,4 @@
-#include<stdio.h>
+	#include<stdio.h>
 #include<math.h>
 
  void nhapHCNso(int n,int m){
@@ -35,7 +35,7 @@ void nhapTGvuong(int n){
 		 printf("\n");
 	}
 }
-void nhapTGdeu(int n,int sum){
+void nhapTGcan(int n){
 	printf("nhap n: ");
 	scanf("%d",&n);
 	for(int i=1;i<=n;i++){
@@ -65,28 +65,61 @@ void cau9(int n,int sum){
 	   printf("%d",n);
     }
 } 
-void cau8(int a ,int b){
-	printf("nhap a: ");
-	scanf("%d",&a);
-	printf("nhap b: ");
-	scanf("%d",&b);
-	if(a>b){
-		false;
-	}else{
-		for(int i= a;i<= b;i++){
-			printf("%d ",i);
-			for(int j = 1;)
+void nhapTamGiacCanSoDoiXung(int chieuCao)
+{
+	printf("nhap chieu cao: ");
+	scanf("%d",&chieuCao);
+	for(int i = 1; i <= chieuCao;i++)
+	{
+	 for(int j = 1;j <= chieuCao-i;j++)
+	 {
+	 	printf(" ");	
+	 }
+	 for(int j = 1;j <= i ;j++)
+	 {
+	 	printf("%d",j);
+	 }
+	 for(int j= i-1;j >=1;j--)
+	 {
+	 	printf("%d",j);
+	 }
+	 printf("\n");
+	}
+} 
+void hinhTraiTim(int m ,int n)
+{
+//	printf("nhap so hang: ");
+//	scanf("%d",m);
+//	printf("nhap so cot: ");
+//	scanf("%d",n);
+	for(int i = 1;i < 7;i++)
+	{	
+	    for(int j = 1;j <= 7 ;j++  )
+		{
+			if(!((i == 1 && (j == 1 || j == 4 || j == 7))
+               || (i == 4 && (j == 1 || j == 7))
+               || (i == 5 && (j <= 2 || j >= 6))
+               || (i == 6 && (j <= 3 || j >= 5)))) 
+			   {
+                      printf(" * ");
+               } else {
+                      printf("   ");
+                }
+
 		}
-}
-}
+		printf("\n");	
+	}
+} 
+
  int main(){
- 	int n,m,a,b;
+ 	int n,m,chieuCao;
  	int sum =0;
 // 	nhapHCNso(n,m);
 // 	nhapHCNsao(n,m);
 // 	nhapTGvuong(n);
-//	nhapTGdeu(n);  
+//	nhapTGcan(n);  
 //  cau9(n,sum);
-    cau8(a,b);
-    
+//  nhapTamGiacCanSoDoiXung(chieuCao);
+    hinhTraiTim(m,n);   
+	       
  }
